@@ -1,11 +1,9 @@
 import ReactDOM from "react-dom";
-import useRestService from "./hooks/useRestService";
+import Navbar from "./components/Navbar";
 
 const renderApp = () => {
-    const restService = useRestService();
-    console.log(restService.get("/api/getInformation"));
     return (
-        <h1>Hello World</h1>
+        <Navbar />
     );
 };
 
