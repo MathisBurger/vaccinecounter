@@ -5,5 +5,9 @@ index:
     defaults:
         reactRouting: null
     requirements:
-        reactRouting: '^(?!api).+'
+        reactRouting: '^(?!api).+'      
 
+information:
+    path: /api/getInformation
+    controller: App\Controller\InformationController::getAsJSON
+    methods: GET          
