@@ -16,3 +16,8 @@ getNumberOfCounts:
     path: /api/counts/getNumberOfCounts
     controller: App\Controller\CountController::getNumberOfCounts
     methods: GET
+
+createCount:
+    path: /api/counts/createCount
+    controller: App\Controller\CountController::createCount
+    methods: POST    
