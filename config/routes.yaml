@@ -1,0 +1,9 @@
+index:
+    path: /{reactRouting}
+    controller: App\Controller\ReactController::navigate
+    methods: GET
+    defaults:
+        reactRouting: null
+    requirements:
+        reactRouting: '^(?!api).+'
+
