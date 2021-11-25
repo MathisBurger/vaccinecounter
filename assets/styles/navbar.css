@@ -7,4 +7,26 @@
     top: 0;
     left: 0;
     box-shadow: 0px 0px 7px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+.navbar .link-box {
+    height: fit-content;
+    width: 70px;
+    font-size: 1.2em;
+    font-family: Arial, Helvetica, sans-serif;
+    padding: 10px;
+    text-align: center;
+    border-radius: 5px;
+    transition: .5s;
+}
+.navbar .link-box:hover {
+    background-color: black;
+    color: white;
+}
+.navbar .link-box.active {
+    background-color: black;
+    color: white;
 }
