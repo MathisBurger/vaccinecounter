@@ -18,7 +18,7 @@ class InformationController extends AbstractController {
         return [
             'version' => $_ENV['APP_VERSION'],
             'mode' => $_ENV['APP_ENV'],
-            'debug' => $_ENV['APP_DEBUG']
+            'debug' => $_ENV['APP_DEBUG'] === "1"
         ];
     }
 
