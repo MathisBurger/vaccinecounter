@@ -2,7 +2,7 @@ import ReactDOM from "react-dom";
 
 const renderApp = () => {
     return (
-        <h1>Porn</h1>
+        <h1>Hello World</h1>
     );
 };
 
