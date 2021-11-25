@@ -64,4 +64,19 @@ class CountController extends AbstractController {
             'ok' => true,
         ]);
     }
+
+    /**
+     * Updates the oldest count and sets the inHouse value
+     * to false.
+     */
+    public function removeOldestActiveCount(): Response 
+    {
+        $count = $this->countService->getOldestCount();
+        $newCount = $this->countFactory->updateInHouse($count, false);
+        return new JsonResponse([
+            'timestamp' => new DateTime(),
+            'message' => 'successfully removed count',
+            'new_count' => $newCount,
+        ]);
+    }
 }

@@ -20,4 +20,9 @@ getNumberOfCounts:
 createCount:
     path: /api/counts/createCount
     controller: App\Controller\CountController::createCount
-    methods: POST    
+    methods: POST
+
+removeCount:
+    path: /api/counts/removeCount
+    controller: App\Controller\CountController::removeOldestActiveCount
+    methods: POST        
