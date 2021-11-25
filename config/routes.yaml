@@ -10,4 +10,9 @@ index:
 information:
     path: /api/getInformation
     controller: App\Controller\InformationController::getAsJSON
-    methods: GET          
+    methods: GET
+
+getNumberOfCounts:
+    path: /api/counts/getNumberOfCounts
+    controller: App\Controller\CountController::getNumberOfCounts
+    methods: GET

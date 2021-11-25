@@ -25,6 +25,11 @@ class CountEntity {
      */
     private ?DateTimeInterface $createdAt = null;
 
+    /**
+     * @ORM\Column(type="boolean", nullable=true)
+     */
+    private ?bool $inHouse = null;
+
     public function getId(): int 
     {
         return $this->id;
@@ -38,6 +43,17 @@ class CountEntity {
     public function setCreatedAt(?DateTimeInterface $createdAt): self 
     {
         $this->createdAt = $createdAt;
+        return $this;
+    }
+
+    public function getInHouse(): ?bool
+    {
+        return $this->inHouse;
+    }
+
+    public function setInHouse(?bool $inHouse): self
+    {
+        $this->inHouse = $inHouse;
         return $this;
     }
 }
