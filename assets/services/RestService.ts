@@ -1,10 +1,19 @@
-import { GetAllCountsResponse, NumberOfCountsResponse, NumberOfVaccinesResponse } from '../@types/Responses';
+import { GetAllCountsResponse, GetAllVaccinesResponse, NumberOfCountsResponse, NumberOfVaccinesResponse } from '../@types/Responses';
 import { RestServiceInterface } from './../@types/RestServiceInterface.d';
 import { RestFetcher } from "./RestFetcher";
 
 
 
 export class RestService extends RestFetcher implements RestServiceInterface {
+    
+    /**
+     * Fetches all vaccines from the database.
+     * 
+     * @returns The request response
+     */
+    getAllVaccines(): Promise<GetAllVaccinesResponse> {
+        return this.get<GetAllVaccinesResponse>('/api/vaccine/getAllVaccines');
+    }
     
     /**
      * Fetches all counts from the database.
