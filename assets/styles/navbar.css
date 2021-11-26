@@ -23,6 +23,7 @@
     text-align: center;
     border-radius: 5px;
     transition: .5s;
+    cursor: pointer;
 }
 .navbar .link-box:hover {
     background-color: black;

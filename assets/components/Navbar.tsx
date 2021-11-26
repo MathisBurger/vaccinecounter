@@ -1,34 +1,43 @@
-import AppRoutes from "../AppRoutes";
-import useActiveRoute from "../hooks/useActiveRoute";
 import "../styles/navbar.css";
+import {useHistory} from "react-router-dom";
+import { useState } from "react";
 
 const Navbar = () => {
-    const activeRoute = useActiveRoute();
+
+    const history = useHistory();
+    const [state, updateState] = useState<number>(0);
+
 
     const getClass = (path: string) => {
-        return activeRoute === path ? 'active' : '';
-    }
+        return window.location.pathname === path ? 'active' : '';
+    };
+
+    const redirect = (path: string) => {
+        history.push(path);
+
+        // for rerendering purposes
+        updateState(state + 1);
+    };
 
     return (
         <div className="navbar">
-            <div className={`link-box ${getClass(AppRoutes.home?.path!)}`}>
-               {AppRoutes.home?.name!}
+            <div className={`link-box ${getClass('/home')}`} onClick={() => redirect('/home')}>
+                Home
             </div>
-            <div className={`link-box ${getClass(AppRoutes.allCounts?.path!)}`}>
-                {AppRoutes.allCounts?.name!}
+            <div className={`link-box ${getClass('/all-counts')}`} onClick={() => redirect('/all-counts')}>
+                Personen Verlauf
             </div>
-            <div className={`link-box ${getClass(AppRoutes.allVaccines?.path!)}`}>
-                {AppRoutes.allVaccines?.name!}
+            <div className={`link-box ${getClass('/all-vaccines')}`} onClick={() => redirect('/all-vaccines')}>
+                Alle Impfungen
             </div>
-            <div className={`link-box ${getClass(AppRoutes.counts?.path!)}`}>
-                {AppRoutes.counts?.name!}
+            <div className={`link-box ${getClass('/counts')}`} onClick={() => redirect('/counts')}>
+                Personen
             </div>
-            <div className={`link-box ${getClass(AppRoutes.vaccines?.path!)}`}>
-                {AppRoutes.vaccines?.name!}
+            <div className={`link-box ${getClass('/vaccines')}`} onClick={() => redirect('/vaccines')}>
+                Impfungen
             </div>
         </div>
     );
 };
 
 export default Navbar;
-
