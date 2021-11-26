@@ -1,13 +1,13 @@
 import ReactDOM from "react-dom";
 import Footer from "./components/Footer";
 import Navbar from "./components/Navbar";
-import CountsPage from "./pages/CountsPage";
+import VaccinePage from "./pages/VaccinePage";
 
 const renderApp = () => {
     return (
         <>
             <Navbar />
-            <CountsPage />
+            <VaccinePage />
             <Footer />
         </>
     );
