@@ -23,3 +23,21 @@ export interface GetAllVaccinesResponse {
     message: string;
     vaccines: VaccineEntity[];
 }
+
+export interface CreateCountResponse {
+    timestamp: Date;
+    message: string;
+    ok: boolean;
+}
+
+export interface RemoveCountResponse {
+    timestamp: Date;
+    message: string;
+    new_count: CountEntity;
+}
+
+export interface CreateVaccineResponse {
+    timestamp: Date;
+    message: string;
+    ok: boolean;
+}
