@@ -11,3 +11,9 @@ export interface NumberOfVaccinesResponse {
     count: number;
     message: string;
 }
+
+export interface GetAllCountsResponse {
+    timestamp: Date;
+    message: string;
+    counts: CountEntity[];
+}

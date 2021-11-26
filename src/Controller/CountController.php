@@ -79,4 +79,16 @@ class CountController extends AbstractController {
             'new_count' => $newCount,
         ]);
     }
+
+    /**
+     * Returns all counts from the database
+     */
+    public function getAllCounts(): Response
+    {
+        return new JsonResponse([
+            'timestamp' => new DateTime(),
+            'message' => 'successfully fetched all counts',
+            'counts' => $this->countService->getAllCounts(),
+        ]);
+    }
 }

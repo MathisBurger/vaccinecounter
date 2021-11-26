@@ -13,6 +13,9 @@ const Navbar = () => {
             <div className={`link-box ${getClass('/home')}`}>
                 Home
             </div>
+            <div className={`link-box ${getClass('all-counts')}`}>
+                Personen Verlauf
+            </div>
         </div>
     );
 };

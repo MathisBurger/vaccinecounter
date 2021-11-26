@@ -45,4 +45,14 @@ class CountService {
     {
         return $this->countRepository->findBy(['inHouse' => false])[0] ?? null;
     }
+
+    /**
+     * Returns all counts that are given in the database
+     * 
+     * @return array ALl counts in the database
+     */
+    public function getAllCounts(): array
+    {
+        return $this->countRepository->findAll();
+    }
 }
