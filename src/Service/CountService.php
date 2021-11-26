@@ -43,7 +43,7 @@ class CountService {
      */
     public function getOldestCount(): ?CountEntity
     {
-        return $this->countRepository->findBy(['inHouse' => false])[0] ?? null;
+        return $this->countRepository->findBy(['inHouse' => true], ['id' => 'ASC'])[0] ?? null;
     }
 
     /**

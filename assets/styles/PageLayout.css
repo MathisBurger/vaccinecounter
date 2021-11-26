@@ -11,3 +11,6 @@
 .page-layout.cols-1 {
     grid-template-columns: 100%;
 }
+.page-layout.cols-3 {
+    grid-template-columns: repeat(3, 33%);
+}
