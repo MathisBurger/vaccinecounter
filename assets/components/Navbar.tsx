@@ -19,6 +19,12 @@ const Navbar = () => {
             <div className={`link-box ${getClass('/all-vaccines')}`}>
                 Alle Impfungen
             </div>
+            <div className={`link-box ${getClass('/counts')}`}>
+                Personen
+            </div>
+            <div className={`link-box ${getClass('/vaccines')}`}>
+                Impfungen
+            </div>
         </div>
     );
 };
