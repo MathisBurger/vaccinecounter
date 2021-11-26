@@ -1,7 +1,7 @@
-import { RestService } from "../services/RestService"
+import { RestService } from '../services/RestService';
 
 const useRestService = () => {
-    return new RestService();
-}
+  return new RestService();
+};
 
 export default useRestService;
