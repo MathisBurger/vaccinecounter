@@ -26,3 +26,18 @@ removeCount:
     path: /api/counts/removeCount
     controller: App\Controller\CountController::removeOldestActiveCount
     methods: POST        
+
+getNumberOfVaccines:
+    path: /api/vaccine/getNumberOfVaccines
+    controller: App\Controller\VaccineController::getNumberOfVaccines
+    methods: GET
+    
+getAllVaccines:
+    path: /api/vaccine/getAllVaccines
+    controller: App\Controller\VaccineController::getAllVaccines
+    methods: GET
+    
+createVaccine:
+    path: /api/vaccine/createVaccine
+    controller: App\Controller\VaccineController::createVaccine
+    methods: POST
