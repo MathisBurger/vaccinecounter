@@ -16,7 +16,6 @@ const AllCountsPage = () => {
         };
         fetch();
     }, []);
-
     return (
         <PageLayout cols="cols-1">
             <PageListView elements={counts}/>
