@@ -4,11 +4,6 @@ export interface CountEntity {
     inHouse: boolean;
 }
 
-export enum VaccineEnum {
-    BIONTECH,
-    ASTRACENECA,
-}
-
 export interface VaccineEntity {
     id: number;
     createdAt: Date;

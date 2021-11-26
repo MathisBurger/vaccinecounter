@@ -1,5 +1,4 @@
 import { useEffect, useState } from "react";
-import { VaccineEnum } from "../@types/BaseEntitys";
 import ActionButton from "../components/ActionButton";
 import AddVaccineDialog from "../components/AddVacineDialog";
 import DisplayCard from "../components/DisplayCard";
@@ -22,15 +21,7 @@ const VaccinePage = () => {
     }, []);
 
     const addVaccine = async (vaccine: string) => {
-        let vac: VaccineEnum;
-        if (vaccine === 'BIONTECH') {
-            vac = VaccineEnum.BIONTECH;
-        } else if (vaccine === 'ASTRACENECA') {
-            vac = VaccineEnum.ASTRACENECA;
-        } else {
-            vac = VaccineEnum.BIONTECH;
-        }
-        await RestService.createVaccine(vac);
+        await RestService.createVaccine(vaccine);
         const resp = await RestService.getNumberOfVaccines();
         setVaccines(resp.count);
     }

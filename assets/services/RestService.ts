@@ -1,4 +1,3 @@
-import { VaccineEnum } from '../@types/BaseEntitys';
 import { CreateCountResponse, CreateVaccineResponse, GetAllCountsResponse, GetAllVaccinesResponse, NumberOfCountsResponse, NumberOfVaccinesResponse, RemoveCountResponse } from '../@types/Responses';
 import { RestServiceInterface } from './../@types/RestServiceInterface.d';
 import { RestFetcher } from "./RestFetcher";
@@ -33,7 +32,7 @@ export class RestService extends RestFetcher implements RestServiceInterface {
      * @param vaccine The vaccine the user got
      * @returns The request response
      */
-    createVaccine(vaccine: VaccineEnum): Promise<CreateVaccineResponse> {
+    createVaccine(vaccine: string): Promise<CreateVaccineResponse> {
         return this.post<CreateVaccineResponse>('/api/vaccine/createVaccine', {vaccine: vaccine.toString()});
     }
     

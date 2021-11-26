@@ -8,5 +8,5 @@ export interface RestServiceInterface {
     getAllVaccines(): Promise<GetAllVaccinesResponse>;
     createCount(inHouse: boolean): Promise<CreateCountResponse>;
     removeOldestCount(): Promise<RemoveCountResponse>;
-    createVaccine(vaccine: VaccineEnum): Promise<CreateVaccineResponse>;
+    createVaccine(vaccine: string): Promise<CreateVaccineResponse>;
 }
