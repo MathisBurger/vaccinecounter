@@ -1,4 +1,4 @@
-import '../styles/actionbutton.css';
+import '../styles/actionbutton.scss';
 
 type ActionButtonProps = {
     label: string;

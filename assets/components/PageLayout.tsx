@@ -1,4 +1,4 @@
-import '../styles/PageLayout.css';
+import '../styles/PageLayout.scss';
 
 const PageLayout = ({children, cols}: React.PropsWithChildren<{cols: string}>) => {
 

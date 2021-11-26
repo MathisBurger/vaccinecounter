@@ -1,4 +1,4 @@
-import '../styles/DisplayCard.css';
+import '../styles/DisplayCard.scss';
 
 type DisplayCardProps = {
     label: string;
