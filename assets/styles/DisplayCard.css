@@ -1,0 +1,22 @@
+.display-card {
+    width: 300px;
+    height: 300px;
+    border-radius: 5px;
+    box-shadow: 3px 3px 3px rgb(145, 145, 145);
+    display: grid;
+    grid-template-rows: 80% 20%;
+    place-items: center;
+    border: 1px solid rgb(197, 197, 197);
+    transition: .3s;
+}
+.display-card:hover {
+    box-shadow: 5px 5px 5px rgb(145, 145, 145);
+}
+.display-card .large-content {
+    font-size: 5em;
+    font-weight: bold;
+    font-family: Arial, Helvetica, sans-serif;
+}
+.display-card .label {
+    font-family: Arial, Helvetica, sans-serif;
+}

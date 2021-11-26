@@ -1,0 +1,9 @@
+.page-layout {
+    width: 100vw;
+    height: 100vh;
+    display: grid;
+    place-items: center;
+}
+.page-layout.cols-2 {
+    grid-template-columns: repeat(2, 50%);
+}
