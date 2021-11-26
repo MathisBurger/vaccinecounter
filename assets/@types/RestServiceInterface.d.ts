@@ -1,3 +1,6 @@
+import { NumberOfCountsResponse, NumberOfVaccinesResponse } from './Responses.d';
+
 export interface RestServiceInterface {
-    get<T>(path: string): Promise<T>;
+    getNumberOfCounts(): Promise<NumberOfCountsResponse>;
+    getNumberOfVaccines(): Promise<NumberOfVaccinesResponse>;
 }

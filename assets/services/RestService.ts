@@ -1,29 +1,28 @@
+import { NumberOfCountsResponse, NumberOfVaccinesResponse } from '../@types/Responses';
 import { RestServiceInterface } from './../@types/RestServiceInterface.d';
+import { RestFetcher } from "./RestFetcher";
 
-export class RestService implements RestServiceInterface {
 
+
+export class RestService extends RestFetcher implements RestServiceInterface {
+    
     /**
+     * Fetches the number of vaccines from the server.
      * 
-     * @param path The request path of the API.
-     * @param body The body of the request
-     * @returns A promise of the request
+     * @returns The request response
      */
-    private async req<T>(method: string, path: string, body?: any): Promise<T> {
-        const resp = await fetch(path, {
-            body: JSON.stringify(body),
-            method: method,
-        });
-        return await resp.json() as T;
+    getNumberOfVaccines(): Promise<NumberOfVaccinesResponse> {
+        return this.get<NumberOfVaccinesResponse>('/api/vaccine/getNumberOfVaccines');
+    }
+    
+    /**
+     * Fetches the number of counts from the Database
+     * 
+     * @returns The request response
+     */
+    getNumberOfCounts(): Promise<NumberOfCountsResponse> {
+        return this.get<NumberOfCountsResponse>('/api/counts/getNumberOfCounts');
     }
 
-    /**
-     * Executes a GET request to the provided path
-     * and parses the response into this type.
-     * 
-     * @param path The path to the request
-     * @returns A promise of the response
-     */
-    public async get<T>(path: string): Promise<T> {
-        return this.req<T>("GET", path);
-    }
+
 }
