@@ -13,8 +13,11 @@ const Navbar = () => {
             <div className={`link-box ${getClass('/home')}`}>
                 Home
             </div>
-            <div className={`link-box ${getClass('all-counts')}`}>
+            <div className={`link-box ${getClass('/all-counts')}`}>
                 Personen Verlauf
+            </div>
+            <div className={`link-box ${getClass('/all-vaccines')}`}>
+                Alle Impfungen
             </div>
         </div>
     );
