@@ -8,10 +8,12 @@ use App\Repository\VaccineRepository;
 class VaccineService {
 
     private VaccineRepository $vaccineRepository;
+    private SerializingService $serializingService;
 
-    public function __construct(VaccineRepository $vaccineRepository)
+    public function __construct(VaccineRepository $vaccineRepository, SerializingService $serializingService)
     {
-        $this->vaccineRepository = $vaccineRepository;    
+        $this->vaccineRepository = $vaccineRepository;  
+        $this->serializingService = $serializingService;  
     }
 
     /**
@@ -31,6 +33,11 @@ class VaccineService {
      */
     public function getAllVaccines(): array
     {
-        return $this->vaccineRepository->findAll();
+        $vaccines = $this->vaccineRepository->findAll();
+        $normalizedVaccines = [];
+        foreach ($vaccines as $vaccine) {
+            $normalizedVaccines[] = $this->serializingService->normalize($vaccine);
+        }
+        return $normalizedVaccines;
     }
 }

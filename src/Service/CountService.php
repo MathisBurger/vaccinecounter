@@ -8,10 +8,12 @@ use App\Repository\CountRepository;
 class CountService {
 
     private CountRepository $countRepository;
+    private SerializingService $serializingService;
 
-    public function __construct(CountRepository $countRepository)
+    public function __construct(CountRepository $countRepository, SerializingService $serializingService)
     {
         $this->countRepository = $countRepository;
+        $this->serializingService = $serializingService;
     }
 
     /**
@@ -53,6 +55,11 @@ class CountService {
      */
     public function getAllCounts(): array
     {
-        return $this->countRepository->findAll();
+        $counts = $this->countRepository->findAll();
+        $normalizedCounts = [];
+        foreach ($counts as $count) {
+            $normalizedCounts[] = $this->serializingService->normalize($count);
+        }
+        return $normalizedCounts;
     }
 }
