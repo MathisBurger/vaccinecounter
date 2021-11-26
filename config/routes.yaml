@@ -40,4 +40,4 @@ getAllVaccines:
 createVaccine:
     path: /api/vaccine/createVaccine
     controller: App\Controller\VaccineController::createVaccine
-    methods: POST
+    methods: POST    
