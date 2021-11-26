@@ -11,7 +11,7 @@ const Footer = () => {
 
     return (
         <div className="footer">
-            <div className="copyright">©2021 GitHub Inc.</div>
+            <div className="copyright">©2021 MIT Licensed</div>
             <div />
             <div className="link" onClick={onCreditsClick}>Credits</div>
             <div className="link" onClick={onGithubClick}>GitHub</div>
