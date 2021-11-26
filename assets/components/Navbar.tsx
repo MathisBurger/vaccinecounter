@@ -1,3 +1,4 @@
+import AppRoutes from "../AppRoutes";
 import useActiveRoute from "../hooks/useActiveRoute";
 import "../styles/navbar.css";
 
@@ -10,20 +11,20 @@ const Navbar = () => {
 
     return (
         <div className="navbar">
-            <div className={`link-box ${getClass('/home')}`}>
-                Home
+            <div className={`link-box ${getClass(AppRoutes.home?.path!)}`}>
+               {AppRoutes.home?.name!}
             </div>
-            <div className={`link-box ${getClass('/all-counts')}`}>
-                Personen Verlauf
+            <div className={`link-box ${getClass(AppRoutes.allCounts?.path!)}`}>
+                {AppRoutes.allCounts?.name!}
             </div>
-            <div className={`link-box ${getClass('/all-vaccines')}`}>
-                Alle Impfungen
+            <div className={`link-box ${getClass(AppRoutes.allVaccines?.path!)}`}>
+                {AppRoutes.allVaccines?.name!}
             </div>
-            <div className={`link-box ${getClass('/counts')}`}>
-                Personen
+            <div className={`link-box ${getClass(AppRoutes.counts?.path!)}`}>
+                {AppRoutes.counts?.name!}
             </div>
-            <div className={`link-box ${getClass('/vaccines')}`}>
-                Impfungen
+            <div className={`link-box ${getClass(AppRoutes.vaccines?.path!)}`}>
+                {AppRoutes.vaccines?.name!}
             </div>
         </div>
     );
