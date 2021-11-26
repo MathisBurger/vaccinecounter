@@ -1,5 +1,5 @@
 import { CountEntity, VaccineEntity } from '../@types/BaseEntitys';
-import '../styles/PageListView.css';
+import '../styles/PageListView.scss';
 
 type PageListViewProps = {
     elements: CountEntity[] | VaccineEntity[];

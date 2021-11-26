@@ -53,6 +53,7 @@ Encore.setOutputPath('public/build/')
   })
 
   .enableTypeScriptLoader()
+  .enableSassLoader()
   .enableReactPreset();
 
 module.exports = Encore.getWebpackConfig();

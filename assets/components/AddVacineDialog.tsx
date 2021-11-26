@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import '../styles/addVaccineDialog.css';
+import '../styles/addVaccineDialog.scss';
 
 type AddVaccineDialogProps = {
     onClose: () => void;
