@@ -5,8 +5,8 @@ namespace App\Service;
 use App\Entity\CountEntity;
 use App\Repository\CountRepository;
 
-class CountService {
-
+class CountService
+{
     private CountRepository $countRepository;
     private SerializingService $serializingService;
 
@@ -18,11 +18,11 @@ class CountService {
 
     /**
      * Gets all counts from the database that are left
-     * in the house and counts them;
-     * 
+     * in the house and counts them;.
+     *
      * @return int The number of counts that are in the house
      */
-    public function countAllPeopleInHome(): int 
+    public function countAllPeopleInHome(): int
     {
         return count($this->countRepository->findBy(['inHouse' => true]));
     }
@@ -30,7 +30,7 @@ class CountService {
     /**
      * Fetches the latest entity from the database
      * and returns it.
-     * 
+     *
      * @return CountEntity|null the latest count entity
      */
     public function getLatestCount(): ?CountEntity
@@ -39,8 +39,8 @@ class CountService {
     }
 
     /**
-     * Returns the oldest active count entity
-     * 
+     * Returns the oldest active count entity.
+     *
      * @return CountEntity|null the oldest active count entity
      */
     public function getOldestCount(): ?CountEntity
@@ -49,8 +49,8 @@ class CountService {
     }
 
     /**
-     * Returns all counts that are given in the database
-     * 
+     * Returns all counts that are given in the database.
+     *
      * @return array ALl counts in the database
      */
     public function getAllCounts(): array
@@ -60,6 +60,7 @@ class CountService {
         foreach ($counts as $count) {
             $normalizedCounts[] = $this->serializingService->normalize($count);
         }
+
         return $normalizedCounts;
     }
 }

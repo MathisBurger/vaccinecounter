@@ -1,4 +1,4 @@
-<?php 
+<?php
 
 namespace App\Service;
 
@@ -6,8 +6,8 @@ use App\Entity\VaccineEntity;
 use DateTime;
 use Doctrine\ORM\EntityManagerInterface;
 
-class VaccineFactory {
-
+class VaccineFactory
+{
     private EntityManagerInterface $entityManager;
 
     public function __construct(EntityManagerInterface $entityManager)
@@ -17,8 +17,9 @@ class VaccineFactory {
 
     /**
      * Creates a new vaccine entry in the database.
-     * 
+     *
      * @param string $vaccine The type of vaccine
+     *
      * @return VaccineEntity the whole database entry
      */
     public function createVaccine(string $vaccine): VaccineEntity
@@ -29,6 +30,7 @@ class VaccineFactory {
 
         $this->entityManager->persist($entity);
         $this->entityManager->flush();
+
         return $entity;
     }
 }
