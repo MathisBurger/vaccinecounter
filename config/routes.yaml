@@ -5,5 +5,44 @@ index:
     defaults:
         reactRouting: null
     requirements:
-        reactRouting: '^(?!api).+'
+        reactRouting: '^(?!api).+'      
 
+information:
+    path: /api/getInformation
+    controller: App\Controller\InformationController::getAsJSON
+    methods: GET
+
+getNumberOfCounts:
+    path: /api/counts/getNumberOfCounts
+    controller: App\Controller\CountController::getNumberOfCounts
+    methods: GET
+
+createCount:
+    path: /api/counts/createCount
+    controller: App\Controller\CountController::createCount
+    methods: POST
+
+removeCount:
+    path: /api/counts/removeCount
+    controller: App\Controller\CountController::removeOldestActiveCount
+    methods: POST     
+    
+getAllCounts:
+    path: /api/counts/getAllCounts
+    controller: App\Controller\CountController::getAllCounts
+    methods: GET    
+
+getNumberOfVaccines:
+    path: /api/vaccine/getNumberOfVaccines
+    controller: App\Controller\VaccineController::getNumberOfVaccines
+    methods: GET
+    
+getAllVaccines:
+    path: /api/vaccine/getAllVaccines
+    controller: App\Controller\VaccineController::getAllVaccines
+    methods: GET
+    
+createVaccine:
+    path: /api/vaccine/createVaccine
+    controller: App\Controller\VaccineController::createVaccine
+    methods: POST    
