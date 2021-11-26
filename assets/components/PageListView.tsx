@@ -11,10 +11,13 @@ const PageListView = ({elements}: PageListViewProps) => {
         console.log(el);
         let childList = [];
         for (const i in el) {
+            console.log(i);
             if (i === "createdAt") {
-                //childList.push(<p>{new Date(el[i])}</p>);
+                childList.push(<p>{new Date(el[i].timestamp * 1000).toISOString()}</p>);
+            } else if (i === "inHouse") {
+                childList.push(<p>{el[i] === true ? 'Ja' : 'Nein'}</p>); 
             } else {
-                childList.push(<p>{el[i]}</p>); 
+                childList.push(<p>{'' + el[i]}</p>); 
             }
         }
         return childList;
