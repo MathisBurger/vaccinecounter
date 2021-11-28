@@ -20,7 +20,8 @@
     "watch": "encore dev --watch",
     "lint": "prettier --check --ignore-unknown assets",
     "fix": "prettier --write --ignore-unknown assets",
-    "php-fix": "tools/php-cs-fixer/vendor/bin/php-cs-fixer fix src"
+    "php-fix": "tools/php-cs-fixer/vendor/bin/php-cs-fixer fix src",
+    "build": "encore build"
   },
   "devDependencies": {
     "@types/react": "^17.0.37",
