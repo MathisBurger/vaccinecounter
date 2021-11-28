@@ -6,15 +6,13 @@ use App\Service\CountFactory;
 use App\Service\CountService;
 use App\Validator\CountValidator;
 use DateTime;
-use Exception;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\JsonResponse;
-use Symfony\Component\HttpFoundation\RedirectResponse;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 
-class CountController extends AbstractController {
-
+class CountController extends AbstractController
+{
     private CountService $countService;
     private CountFactory $countFactory;
     private CountValidator $countValidator;
@@ -33,13 +31,14 @@ class CountController extends AbstractController {
      * Returns the number of counts and the latest
      * count in a json array.
      */
-    public function getNumberOfCounts(): Response 
+    public function getNumberOfCounts(): Response
     {
         $response = [
             'timestamp' => new DateTime(),
             'counts' => $this->countService->countAllPeopleInHome(),
             'latestCount' => $this->countService->getLatestCount(),
         ];
+
         return new JsonResponse($response);
     }
 
@@ -59,6 +58,7 @@ class CountController extends AbstractController {
         }
         $req = json_decode($request->getContent(), false);
         $this->countFactory->createCount($req->inHouse);
+
         return new JsonResponse([
             'timestamp' => new DateTime(),
             'message' => 'successfully created new count',
@@ -70,10 +70,11 @@ class CountController extends AbstractController {
      * Updates the oldest count and sets the inHouse value
      * to false.
      */
-    public function removeOldestActiveCount(): Response 
+    public function removeOldestActiveCount(): Response
     {
         $count = $this->countService->getOldestCount();
         $newCount = $this->countFactory->updateInHouse($count, false);
+
         return new JsonResponse([
             'timestamp' => new DateTime(),
             'message' => 'successfully removed count',
@@ -82,7 +83,7 @@ class CountController extends AbstractController {
     }
 
     /**
-     * Returns all counts from the database
+     * Returns all counts from the database.
      */
     public function getAllCounts(): Response
     {

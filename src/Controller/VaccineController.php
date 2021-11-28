@@ -11,14 +11,14 @@ use Symfony\Component\HttpFoundation\JsonResponse;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 
-class VaccineController extends AbstractController {
-
+class VaccineController extends AbstractController
+{
     private VaccineService $vaccineService;
     private VaccineFactory $vaccineFactory;
     private VaccineValidator $vaccineValidator;
 
     public function __construct(
-        VaccineService $vaccineService, 
+        VaccineService $vaccineService,
         VaccineFactory $vaccineFactory,
         VaccineValidator $vaccineValidator
     ) {
@@ -28,7 +28,7 @@ class VaccineController extends AbstractController {
     }
 
     /**
-     * Returns the total number of vaccines
+     * Returns the total number of vaccines.
      */
     public function getNumberOfVaccines(): Response
     {
@@ -40,7 +40,7 @@ class VaccineController extends AbstractController {
     }
 
     /**
-     * Fetches all vaccines from the database
+     * Fetches all vaccines from the database.
      */
     public function getAllVaccines(): Response
     {
@@ -52,7 +52,7 @@ class VaccineController extends AbstractController {
     }
 
     /**
-     * Creates a new vaccine
+     * Creates a new vaccine.
      */
     public function createVaccine(Request $request): Response
     {
@@ -60,7 +60,7 @@ class VaccineController extends AbstractController {
             return new JsonResponse([
                 'ok' => false,
                 'timestamp' => new DateTime(),
-                'message' => 'invalid request'
+                'message' => 'invalid request',
             ]);
         }
         $data = json_decode($request->getContent(), false);
@@ -68,10 +68,11 @@ class VaccineController extends AbstractController {
             return new JsonResponse([
                 'ok' => false,
                 'timestamp' => new DateTime(),
-                'message' => 'The given vaccine type is invalid'
+                'message' => 'The given vaccine type is invalid',
             ]);
         }
         $this->vaccineFactory->createVaccine($data->vaccine);
+
         return new JsonResponse([
             'ok' => true,
             'timestamp' => new DateTime(),

@@ -3855,6 +3855,11 @@
     "source-map" "^0.6.1"
     "supports-color" "^6.1.0"
 
+"prettier@2.5.0":
+  "integrity" "sha512-FM/zAKgWTxj40rH03VxzIPdXmj39SwSjwG0heUcNFwI+EMZJnY93yAiKXM3dObIKAM5TA88werc8T/EwhB45eg=="
+  "resolved" "https://registry.npmjs.org/prettier/-/prettier-2.5.0.tgz"
+  "version" "2.5.0"
+
 "pretty-error@^3.0.3":
   "integrity" "sha512-ytLFLfv1So4AO1UkoBF6GXQgJRaKbiSiGFICaOPNwQ3CMvBvXpLRubeQWyPGnsbV/t9ml9qto6IeCsho0aEvwQ=="
   "resolved" "https://registry.npmjs.org/pretty-error/-/pretty-error-3.0.4.tgz"

@@ -17,12 +17,17 @@
     "webpack-notifier": "^1.14.1"
   },
   "scripts": {
-    "watch": "encore dev --watch"
+    "watch": "encore dev --watch",
+    "lint": "prettier --check --ignore-unknown assets",
+    "fix": "prettier --write --ignore-unknown assets",
+    "php-fix": "tools/php-cs-fixer/vendor/bin/php-cs-fixer fix src",
+    "build": "encore prod"
   },
   "devDependencies": {
     "@types/react": "^17.0.37",
     "@types/react-dom": "^17.0.11",
     "@types/react-router-dom": "^5.3.2",
+    "prettier": "2.5.0",
     "sass": "^1.43.5",
     "sass-loader": "^12.3.0"
   }

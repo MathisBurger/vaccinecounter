@@ -2,23 +2,21 @@
 
 namespace App\Entity;
 
-use Doctrine\ORM\Mapping as ORM;
-use App\Repository\CountRepository;
 use DateTimeInterface;
+use Doctrine\ORM\Mapping as ORM;
 
 /**
  * @ORM\Entity(repositoryClass=UserRepository::class)
  * @ORM\Table(name="counts")
  */
-class CountEntity {
-
+class CountEntity
+{
     /**
      * @ORM\Id
      * @ORM\GeneratedValue
      * @ORM\Column(type="integer")
      */
     private int $id;
-
 
     /**
      * @ORM\Column(type="datetime", nullable=true)
@@ -30,19 +28,20 @@ class CountEntity {
      */
     private ?bool $inHouse = null;
 
-    public function getId(): int 
+    public function getId(): int
     {
         return $this->id;
     }
 
-    public function getCreatedAt(): ?DateTimeInterface 
+    public function getCreatedAt(): ?DateTimeInterface
     {
         return $this->createdAt;
     }
 
-    public function setCreatedAt(?DateTimeInterface $createdAt): self 
+    public function setCreatedAt(?DateTimeInterface $createdAt): self
     {
         $this->createdAt = $createdAt;
+
         return $this;
     }
 
@@ -54,6 +53,7 @@ class CountEntity {
     public function setInHouse(?bool $inHouse): self
     {
         $this->inHouse = $inHouse;
+
         return $this;
     }
 }

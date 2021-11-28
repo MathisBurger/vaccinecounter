@@ -2,7 +2,6 @@
 
 namespace App\Entity;
 
-use App\Repository\VaccineRepository;
 use DateTimeInterface;
 use Doctrine\ORM\Mapping as ORM;
 
@@ -10,10 +9,10 @@ use Doctrine\ORM\Mapping as ORM;
  * @ORM\Entity(repositoryClass=UserRepository::class)
  * @ORM\Table(name="vaccines")
  */
-class VaccineEntity {
-
-    const VACCINE_BIONTECH = 'BIONTECH';
-    const VACCINE_ASTRA = 'ASTRACENECA';
+class VaccineEntity
+{
+    public const VACCINE_BIONTECH = 'BIONTECH';
+    public const VACCINE_ASTRA = 'ASTRACENECA';
 
     /**
      * @ORM\Id
@@ -32,7 +31,7 @@ class VaccineEntity {
      */
     private ?string $vaccine;
 
-    public function getId(): int 
+    public function getId(): int
     {
         return $this->id;
     }
@@ -45,6 +44,7 @@ class VaccineEntity {
     public function setCreatedAt(?DateTimeInterface $createdAt): self
     {
         $this->createdAt = $createdAt;
+
         return $this;
     }
 
@@ -56,6 +56,7 @@ class VaccineEntity {
     public function setVaccine(?string $vaccine): self
     {
         $this->vaccine = $vaccine;
+
         return $this;
     }
 }

@@ -1,16 +1,16 @@
 .page-layout {
-    width: 100vw;
-    height: 100vh;
-    display: grid;
-    place-items: center;
-    z-index: 0;
+  width: 100vw;
+  height: 100vh;
+  display: grid;
+  place-items: center;
+  z-index: 0;
 }
 .page-layout.cols-2 {
-    grid-template-columns: repeat(2, 50%);
+  grid-template-columns: repeat(2, 50%);
 }
 .page-layout.cols-1 {
-    grid-template-columns: 100%;
+  grid-template-columns: 100%;
 }
 .page-layout.cols-3 {
-    grid-template-columns: repeat(3, 33%);
+  grid-template-columns: repeat(3, 33%);
 }

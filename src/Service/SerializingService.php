@@ -6,8 +6,8 @@ use Symfony\Component\Serializer\Encoder\JsonEncoder;
 use Symfony\Component\Serializer\Normalizer\ObjectNormalizer;
 use Symfony\Component\Serializer\Serializer;
 
-class SerializingService {
-
+class SerializingService
+{
     private Serializer $serializer;
 
     public function __construct()
@@ -19,11 +19,13 @@ class SerializingService {
 
     /**
      * Normalizes an object to be sent via JSON.
-     * 
+     *
      * @param mixed $object The initial object that should be normalized
-     * @return mixed normalized object 
+     *
+     * @return mixed normalized object
      */
-    public function normalize(mixed $object): mixed {
+    public function normalize(mixed $object): mixed
+    {
         return $this->serializer->normalize($object, null);
     }
 }

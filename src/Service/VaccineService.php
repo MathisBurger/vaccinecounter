@@ -2,23 +2,22 @@
 
 namespace App\Service;
 
-use App\Entity\VaccineEntity;
 use App\Repository\VaccineRepository;
 
-class VaccineService {
-
+class VaccineService
+{
     private VaccineRepository $vaccineRepository;
     private SerializingService $serializingService;
 
     public function __construct(VaccineRepository $vaccineRepository, SerializingService $serializingService)
     {
-        $this->vaccineRepository = $vaccineRepository;  
-        $this->serializingService = $serializingService;  
+        $this->vaccineRepository = $vaccineRepository;
+        $this->serializingService = $serializingService;
     }
 
     /**
-     * Returns the total number of vaccines in the database
-     * 
+     * Returns the total number of vaccines in the database.
+     *
      * @return int The total number of vaccines
      */
     public function getTotalNumberOfVaccines(): int
@@ -28,7 +27,7 @@ class VaccineService {
 
     /**
      * Fetches all vaccines from the system and returns them.
-     * 
+     *
      * @return array All vaccines in the system
      */
     public function getAllVaccines(): array
@@ -38,6 +37,7 @@ class VaccineService {
         foreach ($vaccines as $vaccine) {
             $normalizedVaccines[] = $this->serializingService->normalize($vaccine);
         }
+
         return $normalizedVaccines;
     }
 }
