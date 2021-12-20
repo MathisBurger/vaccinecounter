@@ -10,7 +10,7 @@ FROM composer:2 AS phpVendor
 WORKDIR /deps
 COPY . .
 RUN composer install
-FROM php:8.0-apache AS final
+FROM tobi312/php:8.0-apache AS final
 
 WORKDIR /var/www/html
 RUN mkdir vendor
