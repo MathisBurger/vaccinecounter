@@ -5,23 +5,18 @@ COPY . .
 RUN npm i 
 RUN npm run build
 
-FROM composer:2 AS phpVendor
-
-WORKDIR /deps
-COPY . .
-RUN composer install
-
-
 FROM php:8.0-apache AS final
 
 WORKDIR /var/www/html
 
-RUN mkdir public src templates config vendor
+RUN mkdir public src templates config
 COPY --from=webBuild ./webBuild/public public
 COPY --from=webBuild ./webBuild/src src
 COPY --from=webBuild ./webBuild/templates templates
 COPY --from=webBuild ./webBuild/config config
-COPY --from=phpVendor ./deps/vendor vendor
+RUN curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer
+RUN rm -r vendor/ && rm composer.lock && composer install --no-cache
+
 
 ENV APACHE_DOCUMENT_ROOT=/var/www/html/public
 RUN sed -ri -e 's!/var/www/html!${APACHE_DOCUMENT_ROOT}!g' /etc/apache2/sites-available/*.conf
