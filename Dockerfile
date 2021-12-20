@@ -9,11 +9,7 @@ FROM php:8.0-apache AS final
 
 WORKDIR /var/www/html
 
-RUN mkdir public src templates config
-COPY --from=webBuild ./webBuild/public public
-COPY --from=webBuild ./webBuild/src src
-COPY --from=webBuild ./webBuild/templates templates
-COPY --from=webBuild ./webBuild/config config
+COPY --from=webBuild ./webBuild .
 RUN curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer
 RUN composer install --no-cache
 
