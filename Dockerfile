@@ -15,7 +15,7 @@ COPY --from=webBuild ./webBuild/src src
 COPY --from=webBuild ./webBuild/templates templates
 COPY --from=webBuild ./webBuild/config config
 RUN curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer
-RUN rm -r vendor/ && rm composer.lock && composer install --no-cache
+RUN composer install --no-cache
 
 
 ENV APACHE_DOCUMENT_ROOT=/var/www/html/public
